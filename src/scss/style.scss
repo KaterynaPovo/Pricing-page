@@ -1,0 +1,181 @@
+@import "fonts.scss";
+@import "variables.scss";
+@import "reset.scss";
+@import "card.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  box-sizing: inherit;
+  &::before {
+    box-sizing: inherit;
+  }
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font-family: "Poppins";
+  font-weight: $font-weight-normal;
+  font-style: normal;
+  font-size: 15px;
+  background: linear-gradient(180deg, #f5f5fa 0%, #f2dad5 44.15%, #a1abd6 100%);
+
+  //Header part
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 50px;
+  }
+  .burger {
+    cursor: pointer;
+  }
+  .logo {
+    display: flex;
+    cursor: pointer;
+    text-align: center;
+    img {
+      margin-right: 10px;
+    }
+    .name {
+      color: $color-blue;
+      font-size: 23px;
+      font-weight: $font-weight-medium;
+      margin-left: 15px;
+    }
+  }
+  .header-btn {
+    width: 124px;
+    height: 38px;
+    background: $color-violet;
+    border-radius: 25px;
+    padding: 10px 30px;
+    gap: 10px;
+    text-align: center;
+    color: $color-white;
+    font-weight: $font-weight-medium;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background: $color-violet-dark;
+    }
+  }
+
+  //main part
+  .wrapper {
+    max-width: 937px;
+    margin: 0 auto;
+    padding: 17px;
+    h1 {
+      font-size: 40px;
+      line-height: 60px;
+      color: $color-blue;
+      margin-bottom: 19px;
+    }
+    .text-block {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 80px;
+      p {
+        font-size: 18px;
+        line-height: 27px;
+        color: $color-gray;
+        font-weight: $font-weight-medium;
+      }
+    }
+    //pricing switcher
+    .plans-buttons {
+      display: flex;
+      border-radius: 50em;
+      width: 220px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      color: $color-blue;
+      .monthly {
+        display: inline-block;
+        padding: 13px 24px;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.833333px;
+        color: $color-blue;
+        text-transform: uppercase;
+        cursor: pointer;
+        -webkit-transition: -webkit-transform 0.4s;
+        -moz-transition: -moz-transform 0.4s;
+        transition: transform 0.4s;
+      }
+      .yearly {
+        display: inline-block;
+        padding: 13px 24px;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.833333px;
+        color: $color-blue;
+        text-transform: uppercase;
+        cursor: pointer;
+        -webkit-transition: -webkit-transform 0.4s;
+        -moz-transition: -moz-transform 0.4s;
+        transition: transform 0.4s;
+        width: 100%;
+      }
+      .active {
+        background-color: $color-violet;
+        border-radius: 22px;
+        color: #fff;
+        &:hover {
+          background: $color-violet-dark;
+        }
+      }
+    }
+  }
+}
+
+//for the smaller screen
+@media (max-width: 1024px) {
+  body {
+    header {
+      padding: 32px 24px;
+      .logo {
+        position: absolute;
+        right: 20px;
+        top: 32px;
+        .name {
+          margin-left: 10px;
+        }
+      }
+      .header-btn {
+        display: none;
+      }
+    }
+    .wrapper {
+      padding: 0 16px;
+      .text-block {
+        display: inline-block;
+        margin-bottom: 0;
+        p {
+          margin-bottom: 32px;
+        }
+        br {
+          display: none;
+        }
+        .plans-buttons {
+          margin-bottom: 32px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: relative;
+        }
+      }
+    }
+  }
+}

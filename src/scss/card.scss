@@ -1,0 +1,161 @@
+//For the changing price
+.price-card--price-number {
+  font-weight: $font-weight-bold;
+  font-size: 36px;
+  line-height: 46px;
+  color: $color-blue;
+  display: inline-block;
+  position: relative;
+  &:before {
+    content: "$";
+  }
+  &:after {
+    content: "/month";
+    font-weight: $font-weight-medium;
+    font-size: 17px;
+    line-height: 26px;
+    color: $color-gray;
+    margin-bottom: 20px;
+  }
+}
+
+.price-row {
+  margin: auto;
+  display: flex;
+  background: rgba(255, 255, 255, 0.64);
+  border-radius: 26px;
+  justify-content: center;
+  margin-bottom: 69px;
+  .price-col {
+    font-weight: $font-weight-medium;
+    color: $color-gray;
+    width: 292px;
+    padding: 40px 34px;
+
+    .content {
+      height: 288px;
+      margin-bottom: 40px;
+    }
+    .pack {
+      font-size: 28px;
+      line-height: 42px;
+      color: $color-blue;
+      margin-bottom: 6px;
+    }
+    .description {
+      margin-bottom: 14px;
+      line-height: 22px;
+    }
+    ul {
+      li {
+        margin-bottom: 8px;
+        line-height: 22px;
+      }
+    }
+  }
+  .popular {
+    background: $color-blue;
+    box-shadow: 0px 42px 34px rgba(82, 67, 194, 0.295755);
+    border-radius: 26px;
+    color: $color-pure-white;
+    transform: translate(-15px, -20px);
+    z-index: 1;
+    .note {
+      display: inline-block;
+      width: 121px;
+      height: 27px;
+      background: $color-american-blue;
+      border-radius: 13.5px;
+      text-align: center;
+      position: relative;
+      float: right;
+      padding: 5px;
+      margin-bottom: 10px;
+      margin-top: -15px;
+      p {
+        font-weight: 800;
+        font-size: 10px;
+        line-height: 15px;
+        letter-spacing: 0.833333px;
+        text-transform: uppercase;
+        color: $color-violet;
+      }
+    }
+    .price-card--price-number {
+      color: $color-pure-white;
+      &:before {
+        content: "$";
+      }
+      &:after {
+        content: "/month";
+        font-weight: $font-weight-medium;
+        font-size: 17px;
+        line-height: 26px;
+        color: $color-pure-white;
+        margin-bottom: 20px;
+      }
+    }
+    .popular-btn {
+      background: $color-violet;
+      margin-top: 15px;
+      &:hover {
+        background: $color-violet-dark;
+      }
+    }
+    .pack {
+      color: $color-pure-white;
+    }
+  }
+
+  .btn {
+    width: 207px;
+    height: 45px;
+    background: $color-blue;
+    mix-blend-mode: normal;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    line-height: 22px;
+    text-align: center;
+    color: $color-white;
+    font-size: 15px;
+    font-weight: $font-weight-medium;
+    &:hover {
+      background: $color-violet-dark;
+    }
+  }
+}
+
+//marks for the list
+.bottom-bar:before {
+  content: url("../img//Path.png");
+  display: inline-block;
+  background-color: rgba(82, 67, 194, 0.15);
+  color: $color-toolbox;
+  border-radius: 50%;
+  min-width: 20px;
+  min-height: 20px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+//For the smaller screen
+@media (max-width: 1024px) {
+  .container {
+    display: flex;
+    .price-row {
+      display: inline-block;
+      .popular {
+        transform: none;
+        margin: 8px;
+        .popular-btn {
+          margin-top: 22px;
+        }
+        .note {
+          transform: translate(-50%, 0%);
+          position: relative;
+        }
+      }
+    }
+  }
+}
